@@ -1,0 +1,15 @@
+autoComponentScan: true
+closeIdleSessions: true
+
+mappings:
+
+- uri: '/'
+  theme: 'valo'
+  pageTitle: 'Assfam'
+  ui: 'vdo.safir.AssfamAppUI'
+
+- uri: '/#!'
+  view: 'vdo.safir.IndexView'
+
+- uri: '/#!assfam'
+  view: 'vdo.safir.AssfamView'
