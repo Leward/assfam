@@ -22,7 +22,8 @@ class AssfamAppUI extends UI {
 
         HorizontalLayout topBar = new HorizontalLayout();
         topBar.setSpacing(true);
-        createNavigationButton("Assfam", "#!assfam", topBar)
+        createNavigationButton("Index", "", topBar)
+        createNavigationButton("Assfam", "assfam", topBar)
         root.addComponent(topBar);
 
         final Panel viewContainer = new Panel();
@@ -31,7 +32,10 @@ class AssfamAppUI extends UI {
         root.setExpandRatio(viewContainer, 1.0f);
 
         Navigator navigator = new Navigator(this, viewContainer);
-        navigator.addProvider(new GrailsAwareViewProvider());
+        navigator.addView("", IndexView)
+        navigator.addView("assfam", AssfamView)
+
+//        navigator.addProvider(new GrailsAwareViewProvider());
     }
 
     private Button createNavigationButton(String label, String viewName, ComponentContainer container = null) {
